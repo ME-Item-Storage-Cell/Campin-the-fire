@@ -32,3 +32,4 @@ stun = 0;
 
 paralysed = 0;
 
+oxygen_drain = 0;

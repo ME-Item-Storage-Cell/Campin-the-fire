@@ -10,6 +10,11 @@ if (stamina < max_stamina) {
 	}
 oxygen -= dt*2
 
+if (oxygen_drain > 0) {
+	oxygen -= dt*50
+	oxygen_drain -= dt*50
+}
+
 if (y_speed <= grav) {
 	y_speed += grav;
 }
@@ -29,7 +34,10 @@ else {
 if (stun <= 0) {
 	move_and_collide(x_speed, y_speed, oSolid);
 }
-
+else {
+	x_speed = 0;
+	y_speed = 0;
+}
 
 
 if (place_meeting(x, y + 1, oSolid)) { 
