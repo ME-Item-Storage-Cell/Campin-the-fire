@@ -12,6 +12,11 @@ oxygen -= dt*2
 if (stamina < 0) {
 		stamina = 0;
 	}
+	
+if (oxygen < 0) {
+		restart = true;
+	}
+	
 oxygen -= dt*2
 
 if (oxygen_drain > 0) {
