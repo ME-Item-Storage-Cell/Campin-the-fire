@@ -6,23 +6,25 @@ y_speed = 0;
 
 //y_target = 0;
 
-movement_speed = 5; 
+movement_speed = 8; 
 
-water_resistance = 2;
+water_resistance = 4;
 
 grav = 0.15;
 
+buoyancy = -0;
 h_fric = 0.02;   // Horizontal deceleration (Lower = more sliding)
-v_fric = 0.01;   // Vertical deceleration (Lower = floatier)
-accel = 0.4;     // How fast you gain speed
+v_fric = 0.05;   // Vertical deceleration (Lower = floatier)
+accel = 0.05;     // How fast you gain speed
+deccel = 0.01;
 
 accel_final = 0;
 
-accel_max = 50;
+accel_max = 1;
 
-jump_force = 15;
+jump_force = 12;
 
-jump_cooldown = 0.2;
+jump_cooldown = 0.3;
 
 jump_counter = 0;
 
@@ -44,8 +46,6 @@ stun = 0;
 
 paralysed = 0;
 
-h_fric = 0.05;   // Horizontal deceleration (Lower = more sliding)
-v_fric = 0.02;   // Vertical deceleration (Lower = floatier)
 accel = 0.2;     // How fast you gain speed
 
 accel_final = 500;
@@ -59,3 +59,5 @@ vsp = 0;
 restart = false;
 
 win = false;
+
+max_fall_speed = 5.0;  // Cap on falling speed
