@@ -52,7 +52,7 @@ if (place_meeting(x, y + 1, oSolid)) {
 		jump_counter = jump_cooldown;
 
     } else { 
-		y_speed = lerp(y_speed, 0, 0.1); // Gently stops you instead of snapping to 0
+		y_speed = lerp(y_speed, 0, 0.5); // Gently stops you instead of snapping to 0
     }
 
 }
