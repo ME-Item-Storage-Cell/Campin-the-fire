@@ -13,3 +13,7 @@ jump_cooldown = 0.2;
 jump_counter = 0.2;
 
 dt = delta_time / 1000000;
+
+max_oxygen = 100;
+
+oxygen = 100;
