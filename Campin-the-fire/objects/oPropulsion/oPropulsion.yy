@@ -1,12 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"oSeagrass",
+  "%Name":"oPropulsion",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oSeagrass",
+  "name":"oPropulsion",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -31,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sSeagrass",
-    "path":"sprites/sSeagrass/sSeagrass.yy",
+    "name":"sPropulsion",
+    "path":"sprites/sPropulsion/sPropulsion.yy",
   },
   "spriteMaskId":null,
   "visible":true,

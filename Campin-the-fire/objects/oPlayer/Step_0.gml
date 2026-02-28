@@ -1,3 +1,4 @@
+dt = delta_time / 1000000;
 
 jump_counter -= dt;
 stun -= dt;
@@ -56,22 +57,25 @@ if(!climbing){
 
 
 	if (place_meeting(x, y + 1, oSolid)) { 
+		
 		if (stamina < max_stamina) {
 			stamina += 1;
 		}
 	    if (keyboard_check_pressed(vk_up) && paralysed <= 0) { //jump
+			 
 	        y_speed = -(jump_force-2)/water_resistance; 
 			jump_counter = jump_cooldown;
 
 	    } else { 
 			y_speed = lerp(y_speed, 0, 0.5); // Gently stops you instead of snapping to 0
 	    }
-
+		
 	}
 
 	else { //swim
 		if (keyboard_check_pressed(vk_up) && paralysed <= 0 && jump_counter <= 0 && stamina > 20) { 
-	        y_speed = -jump_force/water_resistance; 
+
+			y_speed = -jump_force/water_resistance; 
 			jump_counter = jump_cooldown;
 			stamina -= 30;
 		}
