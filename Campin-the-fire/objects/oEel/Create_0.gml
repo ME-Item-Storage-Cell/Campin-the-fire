@@ -1,7 +1,3 @@
-x_speed = 2;
+x_speed = 5;
 dt = delta_time / 1000000;
-harmTimer = 0;
-originalSpeed = 0;
-max_x = 250;
-initial_x = x;
-movingRight = true;
+timer = 5;

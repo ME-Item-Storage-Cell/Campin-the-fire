@@ -73,3 +73,42 @@ if (y > room_height or y < 0 or x > room_width or x < 0) { // if the player is o
     room_restart(); 
 
 }
+
+key_up = keyboard_check(ord("W"))
+key_down = keyboard_check(ord("S"))
+key_left = keyboard_check(ord("A"))
+key_right = keyboard_check(ord("D"))
+
+var hmove = key_right - key_left
+
+if hmove != 0
+	{
+		if last_h != hmove
+			{
+				last_h = hmove
+				accel_final = 0
+			}
+			
+		if accel_final <= accel_max
+			{
+				accel_final += accel
+			}
+	}
+	else
+	{
+		if accel_final > 0
+			{
+				accel_final -= accel
+			}
+	}
+	
+if accel_final < accel
+	{
+		accel_final = 0
+		last_h = 0
+	}
+	
+hsp = accel_final * last_h
+
+x+= hsp
+y+= vsp
