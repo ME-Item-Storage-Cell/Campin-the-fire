@@ -48,7 +48,7 @@ if(!climbing){
 	x_speed = clamp(x_speed, -max_w, max_w);
 
 	if (stun <= 0) {
-		move_and_collide(x_speed, y_speed, oSolid);
+		move_and_collide(x_speed, y_speed, Tileset);
 	}
 	else {
 		x_speed = 0;
@@ -56,7 +56,7 @@ if(!climbing){
 	}
 
 
-	if (place_meeting(x, y + 1, oSolid)) { 
+	if (place_meeting(x, y + 1, Tileset)) { 
 		
 		if (stamina < max_stamina) {
 			stamina += 1;
@@ -81,7 +81,7 @@ if(!climbing){
 		}
 	}
 
-	if (place_meeting(x, y - 1, oSolid)) { 
+	if (place_meeting(x, y - 1, Tileset)) { 
 
 	    y_speed = 0;
 
