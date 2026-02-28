@@ -4,6 +4,7 @@ jump_counter -= dt;
 stun -= dt;
 paralysed -= dt;
 
+/// stamina regen
 if (stamina < max_stamina) {
 		stamina += dt*20;
 	}
@@ -12,11 +13,13 @@ oxygen -= dt*2
 if (stamina < 0) {
 		stamina = 0;
 	}
-	
+
+/// death
 if (oxygen < 0) {
 		restart = true;
 	}
-	
+
+/// oxygen drain
 oxygen -= dt*2
 
 if (oxygen_drain > 0) {
@@ -24,6 +27,7 @@ if (oxygen_drain > 0) {
 	oxygen_drain -= dt*50
 }
 
+/// falling
 if (y_speed <= grav) {
 	y_speed += grav;
 }
@@ -32,18 +36,18 @@ if (y_speed <= grav) {
 var move_dir = keyboard_check(vk_right) - keyboard_check(vk_left);
 
 if (move_dir != 0 && paralysed <= 0) {
-    x_speed += move_dir * accel;
-} 
-else {
-    if (x_speed > 0) 
-		x_speed = min(0, x_speed - accel, 1);
-    if (x_speed < 0) 
-		x_speed = max(0, x_speed + accel);
+    var is_turning = (sign(move_dir) != sign(x_speed) && x_speed != 0);
+    var active_accel = is_turning ? (accel * 1) : accel;
+    
+    x_speed += move_dir * active_accel;
+} else {
+    if (x_speed > 0) x_speed = max(0, x_speed - h_fric);
+    if (x_speed < 0) x_speed = min(0, x_speed + h_fric);
 }
 
+// Clamp only once
 var max_w = movement_speed / water_resistance;
 x_speed = clamp(x_speed, -max_w, max_w);
-
 if (stun <= 0) {
 	move_and_collide(x_speed, y_speed, Tileset);
 }
@@ -95,29 +99,6 @@ else {
 		stamina -= 30;
 	}
 
-	// Get input direction: 1 for right, -1 for left, 0 for none
-	var move_dir = keyboard_check(vk_right) - keyboard_check(vk_left);
-
-	if (move_dir != 0 && paralysed <= 0) {
-	    // Gradually add acceleration to current speed
-	    x_speed += move_dir * accel;
-	} else {
-	    // Apply friction: move x_speed toward 0 by the accel amount
-	    if (x_speed > 0) x_speed = max(0, x_speed - accel);
-	    if (x_speed < 0) x_speed = min(0, x_speed + accel);
-	}
-
-	// Keep speed within the max limit
-	var max_w = movement_speed / water_resistance;
-	x_speed = clamp(x_speed, -max_w, max_w);
-
-	if (stun <= 0) {
-		move_and_collide(x_speed, y_speed, Tileset);
-	}
-	else {
-		x_speed = 0;
-		y_speed = 0;
-	}
 
 
 	if (place_meeting(x, y + 1, Tileset)) { 
