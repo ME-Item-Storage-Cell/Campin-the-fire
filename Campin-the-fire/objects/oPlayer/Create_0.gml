@@ -32,3 +32,13 @@ stun = 0;
 
 paralysed = 0;
 
+accel = 0.5
+
+accel_final = 0
+
+accel_max = 50
+
+last_h = 0
+
+vsp = 0
+
