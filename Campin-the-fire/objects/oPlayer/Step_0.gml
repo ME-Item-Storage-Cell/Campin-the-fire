@@ -9,6 +9,11 @@ if (stamina < max_stamina) {
 	}
 oxygen -= dt*2
 
+if (stamina < 0) {
+		stamina = 0;
+	}
+oxygen -= dt*2
+
 if (oxygen_drain > 0) {
 	oxygen -= dt*50
 	oxygen_drain -= dt*50
@@ -23,7 +28,8 @@ var move_dir = keyboard_check(vk_right) - keyboard_check(vk_left);
 
 if (move_dir != 0 && paralysed <= 0) {
     x_speed += move_dir * accel;
-} else {
+} 
+else {
     if (x_speed > 0) 
 		x_speed = min(0, x_speed - accel, 1);
     if (x_speed < 0) 
@@ -34,7 +40,7 @@ var max_w = movement_speed / water_resistance;
 x_speed = clamp(x_speed, -max_w, max_w);
 
 if (stun <= 0) {
-	move_and_collide(x_speed, y_speed, oSolid);
+	move_and_collide(x_speed, y_speed, Tileset);
 }
 else {
 	x_speed = 0;
@@ -42,38 +48,39 @@ else {
 }
 
 
-if (place_meeting(x, y + 1, oSolid)) { 
-if(!climbing){
-	y_speed += grav/water_resistance; //grav
-	if (stamina < max_stamina) {
-			stamina += dt*20;
-		}
-	oxygen -= dt*2
+if (place_meeting(x, y + 1, Tileset)) { 
+	if(!climbing){
+		y_speed += grav/water_resistance; //grav
+		if (stamina < max_stamina) {
+				stamina += dt*20;
+			}
+		oxygen -= dt*2
 
-	if (stamina < 0) {
-			stamina = 0;
-		}
+		if (stamina < 0) {
+				stamina = 0;
+			}
 	
-	if (oxygen <= 0) {
-			oxygen = 0;
-			restart = true;
-		}
+		if (oxygen <= 0) {
+				oxygen = 0;
+				restart = true;
+			}
 	
-	oxygen -= dt*2
+		oxygen -= dt*2
 
-	if (oxygen_drain > 0) {
-		oxygen -= dt*50
-		oxygen_drain -= dt*50
+		if (oxygen_drain > 0) {
+			oxygen -= dt*50
+			oxygen_drain -= dt*50
+		}
+	    if (keyboard_check_pressed(vk_up) && paralysed <= 0) 
+		{
+	        y_speed = -(jump_force-2)/water_resistance; 
+			jump_counter = jump_cooldown;
+
+	    } else { 
+			y_speed = lerp(y_speed, 0, 0.1);
+	    }
+
 	}
-    if (keyboard_check_pressed(vk_up) && paralysed <= 0) 
-	{
-        y_speed = -(jump_force-2)/water_resistance; 
-		jump_counter = jump_cooldown;
-
-    } else { 
-		y_speed = lerp(y_speed, 0, 0.1);
-    }
-
 }
 
 else {

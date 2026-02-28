@@ -10,9 +10,9 @@ y_speed = 0;
 
 movement_speed = 5; 
 
-water_resistance = 2;
+water_resistance = 3;
 
-grav = 0.15;
+grav = 0.25;
 
 h_fric = 0.02;   // Horizontal deceleration (Lower = more sliding)
 v_fric = 0.01;   // Vertical deceleration (Lower = floatier)
