@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"oJelly",
-    "path":"sprites/oJelly/oJelly.yy",
+    "name":"sJelly",
+    "path":"sprites/sJelly/sJelly.yy",
   },
   "spriteMaskId":null,
   "visible":true,
