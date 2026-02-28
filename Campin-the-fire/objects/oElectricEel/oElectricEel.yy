@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"oTree",
+  "%Name":"oElectricEel",
   "eventList":[],
   "managed":true,
-  "name":"oTree",
+  "name":"oElectricEel",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -27,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sTree",
-    "path":"sprites/sTree/sTree.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }
