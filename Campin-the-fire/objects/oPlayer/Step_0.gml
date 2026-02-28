@@ -1,15 +1,19 @@
 
-y_speed += grav;
 x_speed = 0;
 y_speed += grav/water_resistance;
 jump_counter -= dt;
+stun -= dt;
+paralysed -= dt;
 
+if (y_speed <= grav) {
+	y_speed += grav;
+}
 
-if keyboard_check(vk_right) { 
+if (keyboard_check(vk_right) && paralysed <= 0) { 
 
     x_speed = movement_speed/water_resistance; 
 
-} else if keyboard_check(vk_left) { 
+} else if (keyboard_check(vk_left) && paralysed <= 0) { 
 
     x_speed = -movement_speed/water_resistance; 
 }
@@ -17,27 +21,23 @@ else {
 	x_speed = 0;
 }
 
-move_and_collide(x_speed, y_speed, oSolid);
+if (stun <= 0) {
+	move_and_collide(x_speed, y_speed, oSolid);
+}
 
-if (keyboard_check_pressed(vk_up) && jump_counter < 0) { 
+if (keyboard_check_pressed(vk_up) && paralysed <= 0 && jump_counter <= 0) { 
         y_speed = -(jump_force-5)/water_resistance; 
 		jump_counter = jump_cooldown;
 }
 
 if (place_meeting(x, y + 1, oSolid)) { 
 
-    if (keyboard_check_pressed(vk_up)) { 
-
+    if (keyboard_check_pressed(vk_up) && paralysed <= 0) { 
         y_speed = -jump_force/water_resistance; 
 		jump_counter = jump_cooldown;
 
     } else { 
-		if (y_speed > 0.2 && y_speed < 0.2) {
-			y_speed = 0; 
-		}
-		else {
-			y_speed /= 1.1;
-		}
+		y_speed = 0;
 
     }
 
