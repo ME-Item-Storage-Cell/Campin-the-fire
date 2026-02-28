@@ -1,4 +1,5 @@
 y_speed += grav;
+x_speed = 0;
 
 if keyboard_check(vk_right) { // if the right arrow key is pressed
 
@@ -23,5 +24,11 @@ if (place_meeting(x, y + 1, oSolid)) { // if heidi is on the ground
         y_speed = 0; // set her y_speed to 0 so she doesn't fall through the ground
 
     }
+
+}
+
+if (y > room_height or y < 0 or x > room_width or x < 0) { // if the player is outside of the room
+
+    room_restart(); 
 
 }
