@@ -50,7 +50,7 @@ paralysed = 0;
 
 accel_final = 1;
 
-accel_max = 2.5;
+accel_max = 1;
 
 last_h = 0;
 
