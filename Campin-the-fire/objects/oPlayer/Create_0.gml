@@ -24,6 +24,8 @@ max_oxygen = 100;
 
 oxygen = 100;
 
+oxygen_drain = 0;
+
 max_stamina = 100;
 
 stamina = 100;
