@@ -1,0 +1,1 @@
+oPlayer.oxygen += 50;
