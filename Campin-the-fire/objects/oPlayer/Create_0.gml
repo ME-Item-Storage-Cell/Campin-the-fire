@@ -8,7 +8,7 @@ y_speed = 0;
 
 movement_speed = 5; 
 
-water_resistance = 1.5;
+water_resistance = 2;
 
 grav = 0.2;
 
@@ -34,13 +34,13 @@ stun = 0;
 
 paralysed = 0;
 
-accel = 0.5
+accel = 0.1;
 
-accel_final = 0
+accel_final = 0;
 
-accel_max = 50
+accel_max = 50;
 
-last_h = 0
+last_h = 0;
 
-vsp = 0
+vsp = 0;
 
