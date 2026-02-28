@@ -1,3 +1,5 @@
+Tileset = layer_tilemap_get_id("Tiles_1");
+
 x_speed = 0;
 
 //x_target = 0;
