@@ -32,12 +32,12 @@ if (y_speed <= grav) {
 	y_speed += grav;
 }
 
-
+/// horizontal movement
 var move_dir = keyboard_check(vk_right) - keyboard_check(vk_left);
 
 if (move_dir != 0 && paralysed <= 0) {
     var is_turning = (sign(move_dir) != sign(x_speed) && x_speed != 0);
-    var active_accel = is_turning ? (accel * 1) : accel;
+    var active_accel = is_turning ? (accel * 3) : accel;
     
     x_speed += move_dir * active_accel;
 } else {
@@ -45,9 +45,11 @@ if (move_dir != 0 && paralysed <= 0) {
     if (x_speed < 0) x_speed = min(0, x_speed + h_fric);
 }
 
-// Clamp only once
+
 var max_w = movement_speed / water_resistance;
 x_speed = clamp(x_speed, -max_w, max_w);
+
+/// stunning
 if (stun <= 0) {
 	move_and_collide(x_speed, y_speed, Tileset);
 }
@@ -108,7 +110,7 @@ else {
 		}
 	    if (keyboard_check_pressed(vk_up) && paralysed <= 0) { //jump
 			 
-	        y_speed = -(jump_force-2)/water_resistance; 
+	        y_speed = -(jump_force)/water_resistance; 
 			jump_counter = jump_cooldown;
 
 	    } else { 

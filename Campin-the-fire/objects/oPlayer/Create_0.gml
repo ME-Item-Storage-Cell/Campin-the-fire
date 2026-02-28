@@ -8,23 +8,23 @@ y_speed = 0;
 
 //y_target = 0;
 
-movement_speed = 10; 
+movement_speed = 7.5; 
 
 water_resistance = 3.5;
 
-grav = 0.12;
+grav = 0.50;
 
 buoyancy = -0;
-h_fric = 0.01;
+h_fric = 0.02;
 v_fric = 0.01;
 accel = 0.012;
 deccel = 0.01;
 
 accel_final = 0;
 
-accel_max = 0.1;
+accel_max = 0.03;
 
-jump_force = 20;
+jump_force = 40;
 
 jump_cooldown = 0.4;
 
@@ -59,5 +59,3 @@ vsp = 0;
 restart = false;
 
 win = false;
-
-max_fall_speed = 3;
