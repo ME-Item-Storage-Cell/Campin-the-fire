@@ -30,6 +30,7 @@
     {"id":{"name":"oFish","path":"objects/oFish/oFish.yy",},},
     {"id":{"name":"oGround","path":"objects/oGround/oGround.yy",},},
     {"id":{"name":"oJellyfish","path":"objects/oJellyfish/oJellyfish.yy",},},
+    {"id":{"name":"oOxygenTank","path":"objects/oOxygenTank/oOxygenTank.yy",},},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},},
     {"id":{"name":"oPropulsion","path":"objects/oPropulsion/oPropulsion.yy",},},
     {"id":{"name":"oSeagrass","path":"objects/oSeagrass/oSeagrass.yy",},},
