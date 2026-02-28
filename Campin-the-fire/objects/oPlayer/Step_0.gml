@@ -37,7 +37,7 @@ var move_dir = keyboard_check(vk_right) - keyboard_check(vk_left);
 
 if (move_dir != 0 && paralysed <= 0) {
     var is_turning = (sign(move_dir) != sign(x_speed) && x_speed != 0);
-    var active_accel = is_turning ? (accel * 3) : accel;
+    var active_accel = is_turning ? (accel * 5) : accel;
     
     x_speed += move_dir * active_accel;
 } else {

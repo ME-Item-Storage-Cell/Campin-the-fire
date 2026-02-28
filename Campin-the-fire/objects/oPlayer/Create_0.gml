@@ -8,7 +8,7 @@ y_speed = 0;
 
 //y_target = 0;
 
-movement_speed = 7.5; 
+movement_speed = 10; 
 
 water_resistance = 3.5;
 
