@@ -1,10 +1,9 @@
 <<<<<<< HEAD
 y_speed += grav;
 x_speed = 0;
-=======
 y_speed += grav/water_resistance;
 jump_counter -= dt;
->>>>>>> 02258374938487a460f23a1816fe2b6ea29637ce
+
 
 if keyboard_check(vk_right) { 
 
