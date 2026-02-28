@@ -1,5 +1,9 @@
+<<<<<<< HEAD
+y_speed += grav;
+x_speed = 0;
 y_speed += grav/water_resistance;
 jump_counter -= dt;
+
 
 if keyboard_check(vk_right) { 
 
@@ -33,5 +37,11 @@ if (place_meeting(x, y + 1, oSolid)) {
 		}
 
     }
+
+}
+
+if (y > room_height or y < 0 or x > room_width or x < 0) { // if the player is outside of the room
+
+    room_restart(); 
 
 }
