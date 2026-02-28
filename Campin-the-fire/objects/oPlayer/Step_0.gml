@@ -8,6 +8,7 @@ paralysed -= dt;
 if (stamina < max_stamina) {
 		stamina += dt*20;
 	}
+oxygen -= dt*2
 
 if (y_speed <= grav) {
 	y_speed += grav;
