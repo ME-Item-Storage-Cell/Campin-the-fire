@@ -5,6 +5,10 @@ jump_counter -= dt;
 stun -= dt;
 paralysed -= dt;
 
+if (stamina < max_stamina) {
+		stamina += dt*20;
+	}
+
 if (y_speed <= grav) {
 	y_speed += grav;
 }
@@ -25,15 +29,14 @@ if (stun <= 0) {
 	move_and_collide(x_speed, y_speed, oSolid);
 }
 
-if (keyboard_check_pressed(vk_up) && paralysed <= 0 && jump_counter <= 0) { 
-        y_speed = -(jump_force-5)/water_resistance; 
-		jump_counter = jump_cooldown;
-}
+
 
 if (place_meeting(x, y + 1, oSolid)) { 
-
-    if (keyboard_check_pressed(vk_up) && paralysed <= 0) { 
-        y_speed = -jump_force/water_resistance; 
+	if (stamina < max_stamina) {
+		stamina += 1;
+	}
+    if (keyboard_check_pressed(vk_up) && paralysed <= 0) { //jump
+        y_speed = -(jump_force-2)/water_resistance; 
 		jump_counter = jump_cooldown;
 
     } else { 
@@ -41,6 +44,15 @@ if (place_meeting(x, y + 1, oSolid)) {
     }
 
 }
+
+else { //swim
+	if (keyboard_check_pressed(vk_up) && paralysed <= 0 && jump_counter <= 0) { 
+        y_speed = -jump_force/water_resistance; 
+		jump_counter = jump_cooldown;
+		stamina -= 30;
+	}
+}
+
 if (place_meeting(x, y - 1, oSolid)) { 
 
     y_speed = 0;

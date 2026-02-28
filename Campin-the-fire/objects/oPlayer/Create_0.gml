@@ -24,6 +24,10 @@ max_oxygen = 100;
 
 oxygen = 100;
 
+max_stamina = 100;
+
+stamina = 100;
+
 stun = 0;
 
 paralysed = 0;
