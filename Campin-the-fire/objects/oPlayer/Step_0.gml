@@ -38,8 +38,12 @@ if (place_meeting(x, y + 1, oSolid)) {
 
     } else { 
 		y_speed = 0;
-
     }
+
+}
+if (place_meeting(x, y - 1, oSolid)) { 
+
+    y_speed = 0;
 
 }
 
