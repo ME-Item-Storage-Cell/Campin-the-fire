@@ -2,11 +2,13 @@ x_speed = 0;
 
 y_speed = 0; 
 
-movement_speed = 1; 
+movement_speed = 5; 
 
 water_resistance = 1.25;
 
 grav = 0.5;
+
+jump_force = 25;
 
 jump_cooldown = 0.2;
 
