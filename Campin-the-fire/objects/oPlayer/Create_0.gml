@@ -10,7 +10,7 @@ movement_speed = 5;
 
 water_resistance = 2.5;
 
-grav = 0.1;
+grav = 0.15;
 
 jump_force = 15;
 
@@ -38,9 +38,9 @@ h_fric = 0.05;   // Horizontal deceleration (Lower = more sliding)
 v_fric = 0.02;   // Vertical deceleration (Lower = floatier)
 accel = 0.2;     // How fast you gain speed
 
-accel_final = 0;
+accel_final = 500;
 
-accel_max = 50;
+accel_max = 500;
 
 last_h = 0;
 
