@@ -8,16 +8,16 @@ y_speed = 0;
 
 //y_target = 0;
 
-movement_speed = 10; 
+movement_speed = 6; 
 
 water_resistance = 3.5;
 
-grav = 0.50;
+grav = 0.30;
 
 buoyancy = -0;
-h_fric = 0.02;
-v_fric = 0.01;
-accel = 0.012;
+h_fric = 0.03;
+v_fric = 0.05;
+accel = 0.05;
 deccel = 0.01;
 
 accel_final = 0;
