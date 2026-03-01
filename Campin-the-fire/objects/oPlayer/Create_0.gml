@@ -4,7 +4,7 @@ x_speed = 0;
 
 y_speed = 0; 
 
-movement_speed = 6; 
+movement_speed = 8; 
 
 water_resistance = 3.5;
 
@@ -13,12 +13,7 @@ grav = 0.30;
 buoyancy = -0;
 h_fric = 0.03;
 v_fric = 0.05;
-accel = 0.025;
-deccel = 0.01;
-
-accel_final = 0;
-
-accel_max = 0.03;
+accel = 0.05;
 
 jump_force = 50;
 
