@@ -50,3 +50,8 @@ vsp = 0;
 restart = false;
 
 win = false;
+
+// Initialize death system
+death_playing = false;      // Are we showing the death screen?
+death_timer = 0;            // Countdown timer for death screen
+death_sound_played = false; // Make sure death sound only plays once
