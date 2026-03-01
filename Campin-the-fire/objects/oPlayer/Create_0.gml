@@ -15,7 +15,7 @@ h_fric = 0.03;
 v_fric = 0.05;
 accel = 0.05;
 
-jump_force = 50;
+jump_force = 75;
 
 jump_cooldown = 0.4;
 

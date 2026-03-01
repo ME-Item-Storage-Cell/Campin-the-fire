@@ -31,14 +31,11 @@ if (death_playing)
     exit; // skip normal step while dead
 }
 
-// ==========================
-// ORIGINAL PLAYER CODE START
-// ==========================
 jump_counter -= dt;
 stun -= dt;
 paralysed -= dt;
 
-audio_play_sound(Museum__Aquarium____Animal_Crossing__New_Horizons_Music,0, true)
+
 
 /// stamina regen
 if (stamina < max_stamina) {
@@ -59,7 +56,7 @@ if (oxygen < 0) {
 oxygen -= dt;
 
 if (oxygen_drain > 0) {
-    oxygen -= dt*50;
+    oxygen -= dt*75;
     oxygen_drain -= dt*50;
 }
 
@@ -93,101 +90,35 @@ else {
 }
 
 // Jumping/swimming
-var move_up = keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"))
+var move_up = keyboard_check(vk_up) || keyboard_check_pressed(ord("W"))
+var move_down = keyboard_check(vk_down)         || keyboard_check(ord("S"));
+var is_on_floor = place_meeting(x, y + 1, Tileset);
 
-if (place_meeting(x, y + 1, Tileset)) { 
-    if(!climbing){
-        y_speed += grav/water_resistance;
-        if (stamina < max_stamina) stamina += dt*20;
-        if (stamina < 0) stamina = 0;
-
-        if (oxygen <= 0) {
-            oxygen = 0;
-            death_playing = true;
-            death_timer = 6;
-            death_sound_played = false;
-        }
-
-		if (oxygen_drain > 0) {
-			oxygen -= dt*50
-			oxygen_drain -= dt*50
-		}
-	    if (move_up && paralysed <= 0) 
-		{
-	        y_speed = -(jump_force-2)/water_resistance; 
-			jump_counter = jump_cooldown;
-
-        if (oxygen_drain > 0) {
-            oxygen -= dt*50;
-            oxygen_drain -= dt*50;
-        }
-
-        if (keyboard_check_pressed(vk_up) && paralysed <= 0) {
-            y_speed = -(jump_force-2)/water_resistance; 
-            jump_counter = jump_cooldown;
-        } else { 
-            y_speed = lerp(y_speed, 0, 0.1);
-        }
-    }
-} 
+// Gravity / Buoyancy
+if (!is_on_floor) {
+    y_speed += (grav * 0.5); // Lower gravity for "floaty" feel
 }
-else {
-	y_speed = lerp(y_speed, 0, v_fric)
-	if (move_up && paralysed <= 0 && jump_counter <= 0 && stamina >= 30) { 
-        y_speed = -jump_force/water_resistance; 
-        jump_counter = jump_cooldown;
-        stamina -= 35;
-        oxygen_drain = 2;
-    }
 
-    if (place_meeting(x, y + 1, Tileset)) { 
-        if (stamina < max_stamina) stamina += 1;
-        if (keyboard_check_pressed(vk_up) && paralysed <= 0) {
-            y_speed = -(jump_force)/water_resistance; 
-            jump_counter = jump_cooldown;
-        } else { 
-            y_speed = lerp(y_speed, 0, 0.5);
-        }
-    } else { // swim
-        if (keyboard_check_pressed(vk_up) && paralysed <= 0 && jump_counter <= 0 && stamina > 20) { 
-            y_speed = -jump_force/water_resistance; 
-            jump_counter = jump_cooldown;
-            stamina -= 30;
-        }
-    }
+// Swimming Up
+if (move_up && paralysed <= 0 && jump_counter <= 0 && stamina >= 20) {
+    y_speed = -jump_force / water_resistance;
+    stamina -= 25;
+    oxygen_drain = 3;
+    jump_counter = 0.2; // Small cooldown to prevent spamming
+}
 
-    if (place_meeting(x, y - 1, Tileset)) y_speed = 0;
+// Diving Down
+if (move_down && paralysed <= 0) {
+    y_speed += (grav * 2);
+}
 
-	if (place_meeting(x, y + 1, Tileset)) { 
-		
-		if (stamina < max_stamina) {
-			stamina += 1;
-		}
-	    if (move_up && paralysed <= 0) {
-			 
-	        y_speed = -(jump_force)/water_resistance; 
-			jump_counter = jump_cooldown;
+// Vertical Drag (Stops the player from sinking/rising forever)
+y_speed *= 0.96; 
 
-	    } else { 
-			y_speed = lerp(y_speed, 0, 0.5);
-	    }
-		
-	}
-
-	else { //swim
-		if (keyboard_check_pressed(vk_up) && paralysed <= 0 && jump_counter <= 0 && stamina > 20) { 
-
-			y_speed = -jump_force/water_resistance; 
-			jump_counter = jump_cooldown;
-			stamina -= 30;
-		}
-	}
-
-	if (place_meeting(x, y - 1, Tileset)) { 
-
-	    y_speed = 0;
-
-	}
+// Ceiling check
+if (place_meeting(x, y - 1, Tileset) && y_speed < 0) {
+    y_speed = 0;
+}
 
 	if (y > room_height or x > room_width or x < 0) { // if the player is outside of the room
 		restart = true;
@@ -198,10 +129,10 @@ else {
 		win = true;
 		audio_stop_sound(Museum__Aquarium____Animal_Crossing__New_Horizons_Music)
 		}
+
+
+    if (move_down && paralysed <= 0) {
+        y_speed += (grav * 0.6);
 }
 
-var move_down = keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S"))
 
-if (move_down && paralysed <= 00) {
-	y_speed += (jump_force/water_resistance/5);
-}
