@@ -20,12 +20,14 @@ if (point_in_circle(oPlayer.x, oPlayer.y, x, y, 150) && harmTimer <= 0) {//signi
 		}
 		else if (x >= max_x + initial_x && movingRight) {
 			movingRight = false;
+			self.image_xscale *= -1;
 		}
 		if (x > initial_x && !movingRight) {
 			x_speed = -2;
 		}
 		else if (x <= initial_x && !movingRight) {
 			movingRight = true;
+			self.image_xscale *= -1;
 		}
 	}
 
