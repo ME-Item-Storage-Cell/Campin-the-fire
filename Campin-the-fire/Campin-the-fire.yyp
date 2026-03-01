@@ -37,6 +37,8 @@
     {"id":{"name":"oSeaweed","path":"objects/oSeaweed/oSeaweed.yy",},},
     {"id":{"name":"oSolid","path":"objects/oSolid/oSolid.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
+    {"id":{"name":"background","path":"sprites/background/background.yy",},},
     {"id":{"name":"sClimbingHooks","path":"sprites/sClimbingHooks/sClimbingHooks.yy",},},
     {"id":{"name":"sEel","path":"sprites/sEel/sEel.yy",},},
     {"id":{"name":"sElectricEel","path":"sprites/sElectricEel/sElectricEel.yy",},},
@@ -57,11 +59,13 @@
     {"id":{"name":"tileset3","path":"sprites/tileset3/tileset3.yy",},},
     {"id":{"name":"Tileset1","path":"tilesets/Tileset1/Tileset1.yy",},},
     {"id":{"name":"TileSet2","path":"tilesets/TileSet2/TileSet2.yy",},},
+    {"id":{"name":"TileSet3","path":"tilesets/TileSet3/TileSet3.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
