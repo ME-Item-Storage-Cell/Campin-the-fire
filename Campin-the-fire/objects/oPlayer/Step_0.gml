@@ -8,7 +8,7 @@ paralysed -= dt;
 if (stamina < max_stamina) {
 		stamina += dt*20;
 	}
-oxygen -= dt*2
+oxygen -= dt*5
 
 if (stamina < 0) {
 		stamina = 0;
@@ -142,4 +142,8 @@ else {
 	if (y > room_height){
 		win = true;
 		}
+}
+
+if (keyboard_check_pressed(vk_down) && paralysed <= 00) {
+	y_speed += (jump_force/water_resistance/5);
 }
