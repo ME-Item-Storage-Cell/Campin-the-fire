@@ -135,7 +135,10 @@ else {
 
 	}
 
-	if (y > room_height or y < 0 or x > room_width or x < 0) { // if the player is outside of the room
+	if (y < 0 or x > room_width or x < 0) { // if the player is outside of the room
 		restart = true;
 	}
+	if (y > room_height){
+		win = true;
+		}
 }
