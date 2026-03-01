@@ -5,3 +5,4 @@ harmTimer = 0;
 max_x = 250;
 initial_x = x;
 originalSpeed = 0;
+visible = true;
