@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"Museum__Aquarium____Animal_Crossing__New_Horizons_Music",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":107.06721,
+  "exportDir":"",
+  "name":"Museum__Aquarium____Animal_Crossing__New_Horizons_Music",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"Museum__Aquarium____Animal_Crossing__New_Horizons_Music.mp3",
+  "volume":0.74,
+}

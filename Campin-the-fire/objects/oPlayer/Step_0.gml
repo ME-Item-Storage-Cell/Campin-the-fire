@@ -4,6 +4,8 @@ jump_counter -= dt;
 stun -= dt;
 paralysed -= dt;
 
+audio_play_sound(Museum__Aquarium____Animal_Crossing__New_Horizons_Music,0, true)
+
 /// stamina regen
 if (stamina < max_stamina) {
 		stamina += dt*20;
