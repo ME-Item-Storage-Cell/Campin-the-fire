@@ -20,7 +20,7 @@ if (oxygen < 0) {
 	}
 
 /// oxygen drain
-oxygen -= dt*2
+oxygen -= dt
 
 if (oxygen_drain > 0) {
 	oxygen -= dt*50
@@ -58,7 +58,6 @@ else {
 	y_speed = 0;
 }
 
-oxygen -= dt
 
 if (place_meeting(x, y + 1, Tileset)) { 
 	if(!climbing){
@@ -101,6 +100,7 @@ else {
         y_speed = -jump_force/water_resistance; 
 		jump_counter = jump_cooldown;
 		stamina -= 35;
+		oxygen_drain = 2;
 	}
 
 
