@@ -1,21 +1,21 @@
 Tileset = layer_tilemap_get_id("Tiles_1");
-
+audio_play_sound(Museum__Aquarium____Animal_Crossing__New_Horizons_Music,0, true)
 x_speed = 0;
 
 y_speed = 0; 
 
-movement_speed = 8; 
+movement_speed = 6; 
 
 water_resistance = 3.5;
 
 grav = 0.30;
 
-buoyancy = -0;
-h_fric = 0.03;
+buoyancy = 0;
+h_fric = 0.035;
 v_fric = 0.05;
-accel = 0.05;
+accel = 0.07;
 
-jump_force = 75;
+jump_force = 50;
 
 jump_cooldown = 0.4;
 
