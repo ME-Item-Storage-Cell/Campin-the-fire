@@ -129,9 +129,8 @@ if (place_meeting(x, y + 1, Tileset)) {
             y_speed = lerp(y_speed, 0, 0.1);
         }
     }
-} else {
-    y_speed = lerp(y_speed, 0, v_fric);
-
+} 
+}
 else {
 	y_speed = lerp(y_speed, 0, v_fric)
 	if (move_up && paralysed <= 0 && jump_counter <= 0 && stamina >= 30) { 

@@ -52,7 +52,3 @@ if (death_playing)
 
     draw_set_alpha(1); // reset alpha
 }
-else
-{
-    draw_self(); // Draw player normally if not dead
-}
