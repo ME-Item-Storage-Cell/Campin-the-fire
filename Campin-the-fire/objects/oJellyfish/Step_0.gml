@@ -26,6 +26,6 @@ if (place_meeting(x, y+10, oPlayer)){
 }
 else {
 	if (place_meeting(x, y-10, oPlayer) && oPlayer.y_speed >= -15){
-		oPlayer.y_speed = -5;
+		oPlayer.y_speed = -25;
 	}
 }
