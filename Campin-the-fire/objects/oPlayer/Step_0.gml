@@ -20,7 +20,7 @@ if (oxygen < 0) {
 	}
 
 /// oxygen drain
-oxygen -= dt*2
+oxygen -= dt
 
 if (oxygen_drain > 0) {
 	oxygen -= dt*50
@@ -65,7 +65,7 @@ if (place_meeting(x, y + 1, Tileset)) {
 		if (stamina < max_stamina) {
 				stamina += dt*20;
 			}
-		oxygen -= dt*2
+		
 
 		if (stamina < 0) {
 				stamina = 0;
@@ -96,10 +96,11 @@ if (place_meeting(x, y + 1, Tileset)) {
 
 else {
 	y_speed = lerp(y_speed, 0, v_fric)
-	if (keyboard_check_pressed(vk_up) && paralysed <= 0 && jump_counter <= 0) { 
+	if (keyboard_check_pressed(vk_up) && paralysed <= 0 && jump_counter <= 0 && stamina >= 30) { 
         y_speed = -jump_force/water_resistance; 
 		jump_counter = jump_cooldown;
-		stamina -= 30;
+		stamina -= 35;
+		oxygen_drain = 2;
 	}
 
 
