@@ -4,10 +4,10 @@ harmTimer -= dt;
 
 move_and_collide(x_speed, 0, oSolid);
 
-if (point_in_circle(oPlayer.x, oPlayer.y, x, y, 150) && harmTimer <= 0) {//significantly bigger than eel becuz player x and y is a point
+if (point_in_circle(oPlayer.x, oPlayer.y, x, y, 130) && harmTimer <= 0) {//significantly bigger than eel becuz player x and y is a point
 	oPlayer.stun = 0.2;
 	oPlayer.paralysed = 2;
-	oPlayer.oxygen_drain = 5;
+	oPlayer.oxygen_drain = 10;
 	originalSpeed = x_speed;
 	x_speed = 0; //animation
 	harmTimer = 2;

@@ -7,7 +7,7 @@ move_and_collide(x_speed, 0, oSolid);
 if (point_in_rectangle(oPlayer.x, oPlayer.y, x-150, y-40, x+150, y+40) && harmTimer <= 0) {//significantly bigger than eel becuz player x and y is a point
 	oPlayer.stun = 1;
 	visible = false;
-	oPlayer.oxygen_drain = 10;
+	oPlayer.oxygen_drain = 15;
 	originalSpeed = x_speed;
 	x_speed = 0; //animation
 	harmTimer = 2;

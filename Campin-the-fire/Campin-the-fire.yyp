@@ -38,6 +38,7 @@
     {"id":{"name":"oSeaweed","path":"objects/oSeaweed/oSeaweed.yy",},},
     {"id":{"name":"oSolid","path":"objects/oSolid/oSolid.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"Room2_Child_0","path":"rooms/Room2_Child_0/Room2_Child_0.yy",},},
     {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
     {"id":{"name":"Museum__Aquarium____Animal_Crossing__New_Horizons_Music","path":"sounds/Museum__Aquarium____Animal_Crossing__New_Horizons_Music/Museum__Aquarium____Animal_Crossing__New_Horizons_Music.yy",},},
     {"id":{"name":"snd_death","path":"sounds/snd_death/snd_death.yy",},},
@@ -54,6 +55,7 @@
     {"id":{"name":"sOxygenTank","path":"sprites/sOxygenTank/sOxygenTank.yy",},},
     {"id":{"name":"sPlayer","path":"sprites/sPlayer/sPlayer.yy",},},
     {"id":{"name":"spr_death_png","path":"sprites/spr_death_png/spr_death_png.yy",},},
+    {"id":{"name":"Sprite21","path":"sprites/Sprite21/Sprite21.yy",},},
     {"id":{"name":"sPropellor","path":"sprites/sPropellor/sPropellor.yy",},},
     {"id":{"name":"sPropulsion","path":"sprites/sPropulsion/sPropulsion.yy",},},
     {"id":{"name":"sSeagrass","path":"sprites/sSeagrass/sSeagrass.yy",},},
@@ -71,6 +73,7 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
+    {"roomId":{"name":"Room2_Child_0","path":"rooms/Room2_Child_0/Room2_Child_0.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

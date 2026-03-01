@@ -189,11 +189,12 @@ else {
 
 	}
 
-	if (y < 0 or x > room_width or x < 0) { // if the player is outside of the room
+	if (y > room_height or x > room_width or x < 0) { // if the player is outside of the room
 		restart = true;
 		
 	}
-	if (y > room_height){
+
+	else if (y <= 0){
 		win = true;
 		audio_stop_sound(Museum__Aquarium____Animal_Crossing__New_Horizons_Music)
 		}
