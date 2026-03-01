@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"zappyZappy",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":1.0320182,
+  "exportDir":"",
+  "name":"zappyZappy",
+  "parent":{
+    "name":"Campin-the-fire",
+    "path":"Campin-the-fire.yyp",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"zappyZappy.mp3",
+  "volume":1.0,
+}

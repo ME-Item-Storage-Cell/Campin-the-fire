@@ -14,8 +14,9 @@ if (point_in_rectangle(oPlayer.x, oPlayer.y, x-150, y-40, x+150, y+40) && harmTi
 	
 	
 }
+if (harmTimer <= 0.2) {visible = true;}
 	if (harmTimer <= 0) {
-		visible = true;
+		
 		if (x < max_x + initial_x && movingRight) {
 			x_speed = 2;
 		}

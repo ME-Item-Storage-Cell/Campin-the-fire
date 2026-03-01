@@ -39,6 +39,7 @@
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
     {"id":{"name":"snd_death","path":"sounds/snd_death/snd_death.yy",},},
+    {"id":{"name":"zappyZappy","path":"sounds/zappyZappy/zappyZappy.yy",},},
     {"id":{"name":"background","path":"sprites/background/background.yy",},},
     {"id":{"name":"sClimbingHooks","path":"sprites/sClimbingHooks/sClimbingHooks.yy",},},
     {"id":{"name":"sEel","path":"sprites/sEel/sEel.yy",},},
