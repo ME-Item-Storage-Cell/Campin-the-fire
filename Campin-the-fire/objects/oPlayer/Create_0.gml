@@ -2,11 +2,7 @@ Tileset = layer_tilemap_get_id("Tiles_1");
 
 x_speed = 0;
 
-//x_target = 0;
-
 y_speed = 0; 
-
-//y_target = 0;
 
 movement_speed = 6; 
 
@@ -24,7 +20,7 @@ accel_final = 0;
 
 accel_max = 0.03;
 
-jump_force = 40;
+jump_force = 50;
 
 jump_cooldown = 0.4;
 

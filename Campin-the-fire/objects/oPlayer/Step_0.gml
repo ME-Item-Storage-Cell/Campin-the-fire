@@ -110,13 +110,13 @@ else {
 		if (stamina < max_stamina) {
 			stamina += 1;
 		}
-	    if (keyboard_check_pressed(vk_up) && paralysed <= 0) { //jump
+	    if (keyboard_check_pressed(vk_up) && paralysed <= 0) {
 			 
 	        y_speed = -(jump_force)/water_resistance; 
 			jump_counter = jump_cooldown;
 
 	    } else { 
-			y_speed = lerp(y_speed, 0, 0.5); // Gently stops you instead of snapping to 0
+			y_speed = lerp(y_speed, 0, 0.5);
 	    }
 		
 	}
