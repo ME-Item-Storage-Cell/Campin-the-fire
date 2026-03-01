@@ -55,7 +55,7 @@ x_speed = clamp(x_speed, -max_w, max_w);
 
 /// stunning
 if (stun <= 0) {
-	move_and_collide(x_speed, y_speed, Tileset);
+	move_and_collide(x_speed, y_speed, Tileset)
 }
 else {
 	x_speed = 0;
@@ -144,9 +144,11 @@ else {
 
 	if (y < 0 or x > room_width or x < 0) { // if the player is outside of the room
 		restart = true;
+		
 	}
 	if (y > room_height){
 		win = true;
+		audio_stop_sound(Museum__Aquarium____Animal_Crossing__New_Horizons_Music)
 		}
 }
 
