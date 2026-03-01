@@ -34,7 +34,7 @@ paralysed -= dt;
 
 /// stamina regen
 if (stamina < max_stamina) {
-    stamina += dt*22.5;
+    stamina += dt*25;
 }
 oxygen -= dt*5;
 
@@ -85,7 +85,7 @@ else {
 }
 
 // Jumping/swimming
-var move_up = keyboard_check(vk_up) || keyboard_check_pressed(ord("W"))
+var move_up = keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"))
 var move_down = keyboard_check(vk_down)         || keyboard_check(ord("S"));
 var is_on_floor = place_meeting(x, y + 1, Tileset);
 

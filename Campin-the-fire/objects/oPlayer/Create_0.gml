@@ -23,15 +23,15 @@ jump_counter = 0;
 
 dt = 0;
 
-max_oxygen = 150;
+max_oxygen = 200;
 
-oxygen = 150;
+oxygen = 200;
 
 oxygen_drain = 0;
 
-max_stamina = 100;
+max_stamina = 120;
 
-stamina = 100;
+stamina = 120;
 
 climbing = false;
 
