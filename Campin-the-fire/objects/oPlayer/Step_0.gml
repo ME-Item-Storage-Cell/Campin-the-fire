@@ -33,7 +33,9 @@ if (y_speed <= grav) {
 }
 
 /// horizontal movement
-var move_dir = keyboard_check(vk_right) - keyboard_check(vk_left);
+var move_right = keyboard_check(vk_right) || keyboard_check(ord("D"))
+var move_left = keyboard_check(vk_left) || keyboard_check(ord("A"))
+var move_dir = move_right - move_left;
 
 if (move_dir != 0 && paralysed <= 0) {
     var is_turning = (sign(move_dir) != sign(x_speed) && x_speed != 0);
@@ -58,6 +60,8 @@ else {
 	y_speed = 0;
 }
 
+// Jumping/swimming
+var move_up = keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"))
 
 if (place_meeting(x, y + 1, Tileset)) { 
 	if(!climbing){
@@ -82,7 +86,7 @@ if (place_meeting(x, y + 1, Tileset)) {
 			oxygen -= dt*50
 			oxygen_drain -= dt*50
 		}
-	    if (keyboard_check_pressed(vk_up) && paralysed <= 0) 
+	    if (move_up && paralysed <= 0) 
 		{
 	        y_speed = -(jump_force-2)/water_resistance; 
 			jump_counter = jump_cooldown;
@@ -96,7 +100,7 @@ if (place_meeting(x, y + 1, Tileset)) {
 
 else {
 	y_speed = lerp(y_speed, 0, v_fric)
-	if (keyboard_check_pressed(vk_up) && paralysed <= 0 && jump_counter <= 0 && stamina >= 30) { 
+	if (move_up && paralysed <= 0 && jump_counter <= 0 && stamina >= 30) { 
         y_speed = -jump_force/water_resistance; 
 		jump_counter = jump_cooldown;
 		stamina -= 35;
@@ -110,7 +114,7 @@ else {
 		if (stamina < max_stamina) {
 			stamina += 1;
 		}
-	    if (keyboard_check_pressed(vk_up) && paralysed <= 0) {
+	    if (move_up && paralysed <= 0) {
 			 
 	        y_speed = -(jump_force)/water_resistance; 
 			jump_counter = jump_cooldown;
@@ -144,6 +148,8 @@ else {
 		}
 }
 
-if (keyboard_check_pressed(vk_down) && paralysed <= 00) {
+var move_down = keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S"))
+
+if (move_down && paralysed <= 00) {
 	y_speed += (jump_force/water_resistance/5);
 }
