@@ -23,9 +23,9 @@ jump_counter = 0;
 
 dt = 0;
 
-max_oxygen = 100;
+max_oxygen = 150;
 
-oxygen = 100;
+oxygen = 150;
 
 oxygen_drain = 0;
 
