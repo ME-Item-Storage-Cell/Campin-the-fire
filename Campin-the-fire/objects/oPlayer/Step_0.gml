@@ -100,7 +100,7 @@ else {
 	if (keyboard_check_pressed(vk_up) && paralysed <= 0 && jump_counter <= 0 && stamina >= 30) { 
         y_speed = -jump_force/water_resistance; 
 		jump_counter = jump_cooldown;
-		stamina -= 40;
+		stamina -= 35;
 	}
 
 
